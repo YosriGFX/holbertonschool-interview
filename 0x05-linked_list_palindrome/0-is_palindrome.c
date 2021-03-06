@@ -4,8 +4,8 @@
 
 /**
  * is_palindrome - palindrom check
- * @head: pointer to head of list
- * Return: 0 or 1
+ * @head: pointer
+ * Return: int
  */
 
 int is_palindrome(listint_t **head)
