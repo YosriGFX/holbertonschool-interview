@@ -12,4 +12,4 @@ void topple(int grid1[3][3]);
 void test4(int test[3][3], int grid1[3][3]);
 int stabilityTest(int grid1[3][3]);
 
-#endif __SANDPILES_H__
+#endif
