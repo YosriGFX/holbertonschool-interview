@@ -1,11 +1,11 @@
 #include "sort.h"
 
 /**
- *	sift_pos - sift positions in the heap
- *	@array: array
- *	@size: size_t
- *	@start: size_t
- *	@end: size_t
+ * sift_pos - sift positions in the heap
+ * @array: array
+ * @size: size_t
+ * @start: size_t
+ * @end: size_t
  */
 void sift_pos(int *array, size_t size, size_t start, size_t end)
 {
