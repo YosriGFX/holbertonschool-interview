@@ -59,5 +59,4 @@ yosri@~/0x0E-linear_skip$
 ```
 > Copyright © 2021 Holberton School. All rights reserved.
 
-> ![YosriGFX](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=jpg&name=4000x4000)
-
+![YosriGFX](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=jpg&name=4096x4096)
