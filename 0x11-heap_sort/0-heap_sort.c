@@ -41,13 +41,12 @@ void sift_pos(int *array, size_t size, size_t start, size_t end)
  */
 void heap_sort(int *array, size_t size)
 {
-	if (size < 2)
-		return;
-
 	size_t end;
 	int temp;
 	long start = (size - 2) / 2;
 
+	if (size < 2)
+		return;
 	while (start >= 0)
 		sift_pos(array, size, start--, size - 1);
 	end = size - 1;

@@ -1,5 +1,5 @@
-#ifndef _HEAP_SORT_H_
-#define _HEAP_SORT_H_
+#ifndef HEAP_SORT_H
+#define HEAP_SORT_H
 
 #include <stddef.h>
 #include <stdlib.h>
