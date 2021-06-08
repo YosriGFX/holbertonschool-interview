@@ -1,5 +1,6 @@
 #include "binary_trees.h"
 
+
 /**
  * get_size - gets the root size
  * @root: pointer
@@ -14,6 +15,32 @@ int get_size(heap_t *root)
 
 
 /**
+ * node_loop - free node
+ * @node: pointer
+ */
+void node_loop(heap_t *node)
+{
+	heap_t *child;
+
+	while (1)
+	{
+		if (!node->left)
+			break;
+		if (!node->right)
+			child = node->left;
+		else
+			child = node->left->n > node->right->n ? node->left : node->right;
+		if (node->n > child->n)
+			break;
+		temp = node->n;
+		node->n = child->n;
+		child->n = temp;
+		node = child;
+	}
+}
+
+
+/**
  * heap_extract - extracts the root node of a Max Binary Heap
  * @root: pointer
  * Return: int
@@ -21,7 +48,7 @@ int get_size(heap_t *root)
 int heap_extract(heap_t **root)
 {
 	int n, size, i, temp;
-	heap_t *node, *index, *child;
+	heap_t *node, *index;
 
 	i = 1;
 	if (!root || !*root)
@@ -47,22 +74,7 @@ int heap_extract(heap_t **root)
 		node->parent->right = NULL;
 	free(node);
 	node = index;
-	while (1)
-	{
-		if (!node->left)
-			break;
-		if (!node->right)
-			child = node->left;
-		else
-			child = node->left->n > node->right->n ? node->left : node->right;
-		if (node->n > child->n)
-			break;
-		temp = node->n;
-		node->n = child->n;
-		child->n = temp;
-		node = child;
-
-	}
+	node_loop(node);
 	*root = index;
 	return (n);
 }
