@@ -30,4 +30,4 @@ yosri@ubuntu:~/0x0F$
 ```
 > Copyright © 2021 Holberton School. All rights reserved.
 
-![YosriGFX](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=jpg&name=4096x4096)
+![Yosri Ghorbel](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=jpg&name=4096x4096)
