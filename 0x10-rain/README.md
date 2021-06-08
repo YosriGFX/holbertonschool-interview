@@ -14,11 +14,11 @@ if __name__ == "__main__":
     walls = [2, 0, 0, 4, 0, 0, 1, 0]
     print(rain(walls))
 
-yosri@ubuntu:~/0x10$ 
+yosri@ubuntu:~/0x10$
 yosri@ubuntu:~/0x10$ ./0_main.py
 6
 6
-yosri@ubuntu:~/0x10$ 
+yosri@ubuntu:~/0x10$
 
 ```
 > Copyright © 2021 Holberton School. All rights reserved.
