@@ -1,12 +1,15 @@
 # 0x11. Heap Sort
+
 Write a function that sorts an array of integers in ascending order using the Heap sort algorithm
-Prototype: void heap_sort(int *array, size_t size);
-You must implement the sift-down heap sort algorithm
-You’re expected to print the array after each time you swap two elements (See example below)
+- Prototype: void heap_sort(int *array, size_t size);
+- You must implement the sift-down heap sort algorithm
+- You’re expected to print the array after each time you swap two elements (See example below)
+
 Write in the file 0-O, the big O notations of the time complexity of the Heap sort algorithm, with 1 notation per line
 - in the best case
 - in the average case
 - in the worst case
+
 ```
 yosri@/tmp/sort$ gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-heap_sort.c print_array.c -o 0-heap
 yosri@/tmp/sort$ ./0-heap
@@ -43,6 +46,7 @@ yosri@/tmp/sort$ ./0-heap
 7, 13, 19, 48, 52, 71, 73, 86, 96, 99
 yosri@/tmp/sort$
 ```
+
 > Copyright © 2021 Holberton School. All rights reserved.
 
 ![Yosri Ghorbel](https://pbs.twimg.com/media/E3YEO7kXwAU9x6x?format=png&name=4096x4096)
