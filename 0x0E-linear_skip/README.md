@@ -54,7 +54,7 @@ Value checked at index [13] = [62]
 Value checked at index [14] = [76]
 Value checked at index [15] = [99]
 Found 999 at index: (nil)
-yosri@~/0x0E-linear_skip$ 
+yosri@~/0x0E-linear_skip$
 
 ```
 > Copyright © 2021 Holberton School. All rights reserved.
