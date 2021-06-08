@@ -20,6 +20,7 @@ int get_size(heap_t *root)
  */
 void node_loop(heap_t *node)
 {
+	int temp;
 	heap_t *child;
 
 	while (1)
@@ -47,7 +48,7 @@ void node_loop(heap_t *node)
  */
 int heap_extract(heap_t **root)
 {
-	int n, size, i, temp;
+	int n, size, i;
 	heap_t *node, *index;
 
 	i = 1;
