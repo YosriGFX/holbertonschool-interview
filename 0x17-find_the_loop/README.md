@@ -25,7 +25,7 @@ yosri@ubuntu:~/0x17-find_the_loop$ ./main
 [0x1370110] 0
 -> [0x1370030] 7
 Loop starts at [0x1370030] 7
-yosri@ubuntu:~/0x17-find_the_loop$ 
+yosri@ubuntu:~/0x17-find_the_loop$
 ```
 
 If you want to use source file instead of the  `libloop.a`  library, please use this file  **lib.c**
