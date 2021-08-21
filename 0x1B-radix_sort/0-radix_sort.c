@@ -10,8 +10,8 @@
  */
 void count_sort(int *array, int n, int exp)
 {
-	int output[n];
-	int i, count[10] = { 0 };
+	int output[n], i;
+	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 	for (i = 0; i < n; i++)
 		count[(array[i] / exp) % 10]++;
