@@ -3,41 +3,49 @@
 
 
 /**
+ * count_sort - count_sort
+ * @array: array
+ * @n: int
+ * @exp: int
+ */
+void count_sort(int *array, int n, int exp)
+{
+	int output[n];
+	int i, count[10] = { 0 };
+
+	for (i = 0; i < n; i++)
+		count[(array[i] / exp) % 10]++;
+	for (i = 1; i < 10; i++)
+		count[i] += count[i - 1];
+	for (i = n - 1; i >= 0; i--)
+	{
+		output[count[(array[i] / exp) % 10] - 1] = array[i];
+		count[(array[i] / exp) % 10]--;
+	}
+	for (i = 0; i < n; i++)
+		array[i] = output[i];
+}
+
+
+/**
  * radix_sort - the Radix sort algorithm
  * @array: array
  * @size: array
  */
 void radix_sort(int *array, size_t size)
 {
-	int temp, min, holder, i, j, count;
-	int div = 10;
-	size_t a;
+	int max, exp;
+	size_t i;
 
-	count = size;
-	if (!array || size == 0)
+	if (!array || size < 2)
 		return;
-	for (a = 0; a < size - 1; a++)
+	max = array[0];
+	for (i = 1; i < size; i++)
+		if (array[i] > max)
+			max = array[i];
+	for (exp = 1; max / exp > 0; exp *= 10)
 	{
-		if (array[a] > array[a + 1])
-		{
-			for (i = 0; i < count; i++)
-			{
-				holder = i;
-				min = array[i] % div;
-				for (j = i + 1; j < count; j++)
-				{
-					if (min > (array[j] % div))
-					{
-						min = array[j] % div;
-						holder = j;
-					}
-				}
-				temp = array[holder];
-				array[holder] = array[i];
-				array[i] = temp;
-			}
-			print_array(array, size);
-			div *= 10;
-		}
+		count_sort(array, size, exp);
+		print_array(array, size);
 	}
 }
