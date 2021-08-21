@@ -9,9 +9,9 @@
  */
 void radix_sort(int *array, size_t size)
 {
-	int temp, min, holder;
+	int temp, min, holder, i, j, count;
 	int div = 10;
-	size_t a, i, j, count;
+	size_t a;
 
 	count = size;
 	if (!array || size == 0)
