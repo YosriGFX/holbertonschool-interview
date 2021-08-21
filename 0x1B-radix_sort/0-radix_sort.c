@@ -10,8 +10,9 @@
  */
 void count_sort(int *array, int n, int exp)
 {
-	int output[n], i;
+	int i;
 	int count[10] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+	int *output = malloc(sizeof(int) * n);
 
 	for (i = 0; i < n; i++)
 		count[(array[i] / exp) % 10]++;
@@ -24,6 +25,7 @@ void count_sort(int *array, int n, int exp)
 	}
 	for (i = 0; i < n; i++)
 		array[i] = output[i];
+	free(output);
 }
 
 
