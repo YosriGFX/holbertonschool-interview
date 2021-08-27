@@ -19,7 +19,8 @@ int regex_match(char const *str, char const *pattern)
 	if (*pattern == '*')
 		return ((regex_match(str, pattern + 1)) || (regex_match(str + 1, pattern)));
 	if (*str != *pattern)
-		if ((*str != '\0') && (*pattern != '\0') && (*pattern != '*'))
-			return (regex_match(str, pattern + 1));
+		if ((*str != '\0') && (*pattern != '\0'))
+			if ((*pattern != '*') && (*pattern != '.'))
+				return (regex_match(str, pattern + 1));
 	return (0);
 }
