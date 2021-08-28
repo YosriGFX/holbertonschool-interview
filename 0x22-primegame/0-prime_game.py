@@ -14,30 +14,27 @@ def isWinner(x, nums):
                 return False
         return True
 
-    def makeTurn(playerC, choices):
+    def makeTurn(choices):
         '''play turn'''
         for a in choices:
             if prime(a):
                 for b in choices:
                     if b % a == 0:
                         choices.remove(b)
-            playerC += 1
             break
-        return playerC, choices
+        return choices
 
     Maria = 0
     Ben = 0
     for rounds in range(x):
         player = 0
-        MariaC = 0
-        BenC = 0
         choices = [c for c in range(2, nums[rounds] + 1)]
         while choices:
             if player == 0:
-                MariaC, choices = makeTurn(MariaC, choices)
+                choices = makeTurn(choices)
                 player = 1
             else:
-                BenC, choices = makeTurn(BenC, choices)
+                choices = makeTurn(choices)
                 player = 0
         if player == 1:
             Maria += 1
