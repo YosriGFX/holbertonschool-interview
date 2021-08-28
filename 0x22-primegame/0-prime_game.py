@@ -6,6 +6,8 @@ def isWinner(x, nums):
     '''determine who the winner of each game is'''
     Maria = 0
     Ben = 0
+    if x < 0:
+        return None
     for rounds in range(x):
         player = 0
         choices = [c for c in range(1, nums[rounds] + 1)]
@@ -41,5 +43,7 @@ def isWinner(x, nums):
                 Maria += 1
     if Maria > Ben:
         return ('Maria')
-    else:
+    elif Ben > Maria:
         return ('Ben')
+    else:
+        return None
