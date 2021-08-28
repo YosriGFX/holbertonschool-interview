@@ -4,44 +4,48 @@
 
 def isWinner(x, nums):
     '''determine who the winner of each game is'''
+    if type(nums) != list and len(nums) != x:
+        return None
+
+    def prime(number):
+        '''check if prime'''
+        for a in range(2, number):
+            if number % a == 0:
+                return False
+        return True
+
+    def makeTurn(playerC, choices):
+        '''play turn'''
+        for a in choices:
+            if prime(a):
+                for b in choices:
+                    if b % a == 0:
+                        choices.remove(b)
+            playerC += 1
+            break
+        return playerC, choices
+
     Maria = 0
     Ben = 0
-    if len(nums) != x:
-        return None
     for rounds in range(x):
         player = 0
-        choices = [c for c in range(1, nums[rounds] + 1)]
-        if len(choices) == 1:
-            Ben += 1
-        else:
-            benC = []
-            mariaC = []
-            while choices:
-                if len(choices) == 1:
-                    if player == 0:
-                        mariaC.append(1)
-                        choices.remove(1)
-                    else:
-                        benC.append(1)
-                        choices.remove(1)
-                for c in choices[1:]:
-                    if player == 0:
-                        for a in choices:
-                            if a % c == 0:
-                                mariaC.append(a)
-                                choices.remove(a)
-                        player = 1
-                    else:
-                        for a in choices:
-                            if a % c == 0:
-                                benC.append(a)
-                                choices.remove(a)
-                        player = 0
-            if player == 1:
-                Ben += 1
+        MariaC = 0
+        BenC = 0
+        choices = [c for c in range(2, nums[rounds] + 1)]
+        while choices:
+            if player == 0:
+                MariaC, choices = makeTurn(MariaC, choices)
+                player = 1
             else:
-                Maria += 1
+                BenC, choices = makeTurn(BenC, choices)
+                player = 0
+        if player == 1:
+            Maria += 1
+        else:
+            Ben += 1
     if Maria > Ben:
         return ('Maria')
-    else:
+    elif Ben > Maria:
         return ('Ben')
+    else:
+        return None
